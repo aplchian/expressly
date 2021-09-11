@@ -16,6 +16,10 @@ app.get('/partners/:name', (req, res) => {
     res.send(response)
   })
 
+  app.get('/', (req, res) => {
+    res.send('hello world')
+  })
+
 
   const port = process.env.PORT || 3000
   app.listen(port, () => {
