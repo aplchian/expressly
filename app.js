@@ -11,7 +11,7 @@ app.get('/authors', (req, res) => {
 app.get('/author/:id', (req, res) => {
   const author = authors.find((x) => x.id == req.params.id)
   if(author){
-    author.posts = posts.find(post => post.userId == req.params.id)
+    author.posts = posts.filter(post => post.userId == req.params.id)
     res.json(author)
   }else{
     res.status(404).send('author not found')
